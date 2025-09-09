@@ -327,7 +327,7 @@
           src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/image-tracking/assets/card-example/softmind/scene.gltf"
         ></a-asset-item>
         <video
-          src="assets/mushroom jar top compliant.mp4"
+          src="assets/mushroom jar top with video game.mp4"
           id="dog-video"
           preload="auto"
           crossorigin="anonymous"
@@ -351,6 +351,32 @@
         ></a-entity>
       </a-entity>
     </a-scene>
+
+    <!-- Button image (hidden initially) -->
+    <img id="start-button-id" src="assets/video game button.png" style="display:none;" />
+
+    <script>
+      (function () {
+        var SHOW_DELAY_MS = 25000; // 25 seconds
+        function changeTheExternalUrl() {
+          return "https://frenchiesvseverybody.github.io/FvEGame2/";
+        }
+        function onReady() {
+          var btn = document.getElementById("start-button-id");
+          if (!btn) return;
+          btn.addEventListener("click", function () {
+            window.location.href = changeTheExternalUrl();
+          });
+          setTimeout(function () {
+            btn.style.display = "block";
+          }, SHOW_DELAY_MS);
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", onReady);
+        } else {
+          onReady();
+        }
+      })();
+    </script>
   </body>
 </html>
-
