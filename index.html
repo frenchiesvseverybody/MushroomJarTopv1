@@ -351,20 +351,21 @@
         ></a-entity>
       </a-entity>
     </a-scene>
-     <!-- Button image (hidden initially) -->
-    <img id="start-button-id" src="assets/video game button.png" style="display:none;" />
+       <!-- Button image (hidden initially) -->
+    <img
+      id="start-button-id"
+      src="assets/video game button.png"
+      style="display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:16px;z-index:2147483647;width:200px;height:auto;cursor:pointer;"
+    />
 
     <script>
       (function () {
         var SHOW_DELAY_MS = 25000; // 25 seconds
-        function changeTheExternalUrl() {
-          return "https://frenchiesvseverybody.github.io/FvEGame2/";
-        }
         function onReady() {
           var btn = document.getElementById("start-button-id");
           if (!btn) return;
           btn.addEventListener("click", function () {
-            window.location.href = changeTheExternalUrl();
+            window.location.href = "https://frenchiesvseverybody.github.io/FvEGame2/";
           });
           setTimeout(function () {
             btn.style.display = "block";
@@ -377,5 +378,3 @@
         }
       })();
     </script>
-  </body>
-</html>
